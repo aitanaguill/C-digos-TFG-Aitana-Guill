@@ -1,14 +1,14 @@
 # DESCRIPCIÓN:
-# Cálculo de estadísticos descriptivos de los rendimientos de todas las bases de datos Excel utilizadas en el TFG.
+# Cálculo de estadísticos descriptivos de los rendimientos de todas las bases de datos
 
 # Cargamos las librerías necesarias
 library(readxl)
 library(moments)
 
-# Ruta donde se encuentran las bases de datos
+# ruta donde se encuentran las bases de datos
 ruta <- "C:/Users/guill/TFG/BASESDEDATOS/Arreglados/"
 
-# Lista de bases de datos a analizar
+# lista de bases de datos dentro de la ruta anterior:
 archivos <- c(
   "AUSTRALIAModBC.xlsx",
   "AUSTRALIAModSBEliminadas.xlsx",
@@ -30,23 +30,23 @@ archivos <- c(
   "USAModSC.xlsx"
 )
 
-# Tabla vacía donde se almacenarán los resultados
+# tabla vacía donde se guardan los resultados
 resultados <- data.frame()
 
-# Bucle para procesar cada archivo
+# bucle para procesar cada archivo
 for (archivo in archivos) {
   
-  # Lectura del archivo Excel
+  # se lee el archivo
   datos <- read_excel(paste0(ruta, archivo))
   
-  # Nombre de la segunda columna, correspondiente a la variable de rendimientos
+  # nombre de la segunda columna, correspondiente a la variable de rendimientos
   nombre_columna <- names(datos)[2]
   cat("Variable analizada:", nombre_columna, "\n")
   
-  # Selección de la segunda columna
+  # se coge la segunda columna, la de rendimientos
   x <- datos[[2]]
   
-  # Limpieza de la variable y conversión a formato numérico
+  # limpieza de la variable ( valores faltantes) y se pasa a númerico sino lo estuviese
   x <- as.character(x)
   x <- gsub(",", ".", x)
   x <- gsub("%", "", x)
@@ -54,10 +54,10 @@ for (archivo in archivos) {
   x[x %in% c("NA", "N/A", "#N/A", "N/D", "ND", "", " ")] <- NA
   x <- as.numeric(x)
   
-  # Número de observaciones válidas
+  # número de observaciones válidas
   n_validos <- sum(!is.na(x))
   
-  # Cálculo de estadísticos descriptivos con la función predeterminada de R
+  # cálculo de estadísticos descriptivos con la función predeterminada de R
   media <- mean(x, na.rm = TRUE)
   desv_tipica <- sd(x, na.rm = TRUE)
   
@@ -74,7 +74,7 @@ for (archivo in archivos) {
   }
   
 
-  # Guardar los resultados de la base actual
+  # se guarda en la base de datos actual
   temp <- data.frame(
     Base = archivo,
     Variable = nombre_columna,
@@ -85,11 +85,11 @@ for (archivo in archivos) {
     Curtosis = curtosis
   )
   
-  # Añadir los resultados a la tabla final
+  # se añaden a la tabla final los resultados
   resultados <- rbind(resultados, temp)
 }
 
-# Guardar los resultados en un archivo CSV (OPCIONAL)
+# se guardan los resultados en un archivo CSV (OPCIONAL)
 write.csv(
   resultados,
   paste0(ruta, "rendimientos_estadisticos.csv"),
