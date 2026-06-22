@@ -72,15 +72,13 @@ Notebook correspondiente a la implementación del modelo Random Forest en la par
 
 En él se construyen los modelos predictivos a partir de las bases imputadas, se separan las variables explicativas de la variable objetivo y se generan predicciones de rendimientos o señales para los distintos pares de activos analizados.
 
-Este notebook constituye la base del proceso de predicción utilizado posteriormente en la toma de decisiones de inversión.
+
 
 ### `PrimeraparteOptimizacionSemiparametrica (2).ipynb`
 
 Notebook correspondiente a la primera fase de la optimización semiparamétrica.
 
-En este archivo se preparan los datos necesarios para la construcción de carteras, se organizan las señales predictivas generadas previamente y se definen los elementos iniciales del procedimiento de optimización.
-
-Este notebook sirve como paso intermedio entre la fase predictiva basada en Random Forest y la fase final de asignación dinámica de pesos.
+En este archivo se ejecuta el codigo de Random Forest con Rolling Window para sacar las tres señales para la segunda parte de optimización semiparamétrica.
 
 ### `Última_parte_OS.ipynb`
 
