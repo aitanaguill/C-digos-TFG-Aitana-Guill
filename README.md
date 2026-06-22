@@ -31,3 +31,12 @@ El exponente de Hurst se utiliza para estudiar la posible existencia de memoria 
 
 Este código aplica el contraste BDS a las series de rendimientos.
 El contraste BDS permite analizar si una serie es independiente e idénticamente distribuida. Su aplicación resulta útil para detectar posibles estructuras no lineales o patrones de dependencia no capturados por modelos lineales tradicionales.
+
+### `ComprobaciónValoresFaltantes.ipynb`
+
+Notebook destinado a calcular el número y porcentaje de valores faltantes en las bases de datos del trabajo. Permite comparar la proporción de valores ausentes antes y después de aplicar MissForest, verificando así el efecto del proceso de imputación sobre las bases utilizadas en el análisis empírico.
+
+### `Última_parte_OS.ipynb`
+
+Notebook correspondiente a la fase final de optimización semiparamétrica. Une las señales generadas previamente, las estandariza y construye las matrices necesarias para la optimización. Posteriormente, define la regla de pesos de cartera, la función de utilidad CRRA y los procedimientos de optimización, incluyendo el caso con muestra de entrenamiento y el enfoque rolling window. Finalmente, calcula métricas de rendimiento y genera recomendaciones de pesos para el mes siguiente.
+
