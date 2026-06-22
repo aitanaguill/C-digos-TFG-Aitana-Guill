@@ -40,12 +40,6 @@ Este código aplica el contraste BDS a las series de rendimientos.
 
 El contraste BDS permite analizar si una serie es independiente e idénticamente distribuida. Su aplicación resulta útil para detectar posibles estructuras no lineales o patrones de dependencia no capturados por modelos lineales tradicionales.
 
-### `ComprobaciónValoresFaltantes.ipynb`
-
-Notebook destinado a calcular el número y porcentaje de valores faltantes en las bases de datos del trabajo.
-
-Permite comparar la proporción de valores ausentes antes y después de aplicar MissForest, verificando así el efecto del proceso de imputación sobre las bases utilizadas en el análisis empírico.
-
 ### `ComprobacionValoresFaltantesAntes.R`
 
 Este código calcula el número total y el porcentaje de valores faltantes presentes en las bases de datos antes de aplicar el proceso de imputación.
