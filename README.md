@@ -74,7 +74,7 @@ En él se construyen los modelos predictivos a partir de las bases imputadas, se
 
 
 
-### `PrimeraparteOptimizacionSemiparametrica (2).ipynb`
+### `PrimeraparteOptimizacionSemiparametrica (3).ipynb`
 
 Notebook correspondiente a la primera fase de la optimización semiparamétrica.
 
